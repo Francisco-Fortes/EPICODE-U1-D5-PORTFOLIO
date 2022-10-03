@@ -1,5 +1,15 @@
 body {
   margin: 0;
+  font-family: "Oswald", sans-serif;
+}
+
+/* WIP: Implement .hover */
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 40%;
 }
 
 .main-division {
@@ -12,55 +22,54 @@ body {
   position: relative;
   width: 50%;
   height: 50%;
-  /* background: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.493),
-    rgba(255, 255, 255, 0.753),
-    #8f5800bb,
-    #8f5800bb) */
-
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-content: center;
 }
 
-#child1 {
-  /* align-self: center; */
-  /* background-color: #f16704; */
+#container-tl1 {
   color: #8e6147;
   width: fit-content;
   padding-left: 30px;
   padding-right: 30px;
 }
 
-#child2 h3 {
-  padding-right: 30px;
+#container-tl2 {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  color: white;
 }
 
-#child2 span {
-  padding-left: 8px;
-  font-weight: bold;
-  font-size: 2rem;
+#container-tl2 h3 {
+  padding-left: 10%;
+  color: #8e6147;
+  opacity: 1;
 }
 
-#child3 {
-  align-self: end;
-  padding-right: 5%;
-  width: 225px;
-  height: 300px;
+#hover-3 {
+  padding-left: 2%;
+  padding-right: 2%;
+  padding-bottom: 2%;
+  text-align: justify;
+  text-justify: inter-word;
+  align-self: center;
+  width: 40%;
+  height: fit-content;
+  --c: no-repeat linear-gradient(#bfa58e 0 0);
+  background: var(--c) calc(-101% + var(--p, 0%)) 100%,
+    var(--c) calc(201% - var(--p, 0%)) 0;
+  background-size: 50.1% var(--p, 0.08em);
+  transition: 0.3s var(--t, 0s),
+    background-position 0.3s calc(0.3s - var(--t, 0s));
 }
 
-/* #child3 span {
-  font-weight: bold;
-  font-size: 2rem;
-} */
-
-img {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: cover;
-  border-radius: 40%;
+#hover-3:hover {
+  --p: 101%;
+  --t: 0.3s;
+  color: #fff;
 }
 
 #top-right {
@@ -75,14 +84,14 @@ img {
   justify-content: space-between;
 }
 
-#childtp1 {
-  /* background: linear-gradient(-45deg #8f5800bb, rgba(255, 255, 255, 0.753)); */
+#bar-tp {
   display: flex;
   justify-content: right;
-  margin-top: 5%;
+  margin-top: 7.5%;
 }
 
-#childtp1 a {
+#bar-tp a {
+  font-size: 1.2rem;
   color: #ffffff;
   border-style: solid;
   border-left: none;
@@ -94,51 +103,57 @@ img {
   text-decoration: none;
 }
 
-#folder {
-  margin-bottom: 10%;
+#container-tr {
+  margin-bottom: 5%;
   width: 200px;
   height: 200px;
-  transition: 1s;
+  transition: 0.8s;
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(./folder-open.svg);
-  /* background-size: cover; */
+  background-image: url(./Library.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
-/* Can we set up an ion-icon as background image?  */
-
-ion-icon {
+/* WIP: Can we set up an ion-icon as background image?  */
+/* ion-icon {
   margin-left: 200px;
   margin-top: 200px;
-  width: 200px;
+  width: 180px;
   height: 200px;
-  color: #ffffff;
-}
+  color: #bfa58e; 
+} */
 /* #folder:hover {
   box-shadow: 0 0 0 200px rgba(0, 0, 0, 0);
 } */
 
-#folder p {
-  color: red;
+#container-tr ul {
+  background-color: #bfa58e;
+  color: white;
   opacity: 0;
-  transition: 2s;
+  transition: 0.1s;
 }
 
-#folder a {
-  color: red;
-  font-weight: bold;
+#container-tr a {
+  color: #ffffff;
   text-decoration: none;
+  opacity: 1;
 }
 
-#folder:hover {
+#container-tr:hover {
+  transform: scale(2);
   background-image: none;
   opacity: 1;
+  color: #ffffff;
 }
 
-#folder:hover p {
+#container-tr:hover ul {
+  background-image: none;
   opacity: 1;
+  color: white;
+  user-select: none;
 }
 
 #bottom-left {
@@ -147,6 +162,48 @@ ion-icon {
   width: 50%;
   height: 50%;
   background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#container-bl {
+  margin-top: 15%;
+  width: 200px;
+  height: 200px;
+  transition: 0.8s;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./Suitcase.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#container-bl ul {
+  background-color: white;
+  color: #bfa58e;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+#container-bl:hover {
+  transform: scale(2);
+  background-image: none;
+  opacity: 1;
+  color: #ffffff;
+}
+
+#container-bl h4 {
+  margin-bottom: %;
+}
+
+#container-bl:hover ul {
+  background-image: none;
+  opacity: 1;
+  color: #bfa58e;
+  user-select: none;
 }
 
 #bottom-right {
@@ -156,4 +213,53 @@ ion-icon {
   width: 50%;
   height: 50%;
   background-color: #bfa58e;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#container-br {
+  margin-top: 15%;
+  width: 200px;
+  height: 200px;
+  transition: 1s;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./folder.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* WIP: Should I put some borders? */
+#container-br p {
+  /* border-color: #8e6147;
+  border-style: solid;
+  border-radius: 20%;
+  border-width: 5%; */
+  background-color: #bfa58e;
+  color: #ffffff;
+  opacity: 0;
+  transition: 0.1s;
+}
+
+#container-br a {
+  color: #ffffff;
+  text-decoration: none;
+  opacity: 1;
+}
+
+#container-br:hover {
+  transform: scale(2);
+  background-image: none;
+  opacity: 1;
+  color: #ffffff;
+}
+
+#container-br:hover p {
+  background-image: none;
+  opacity: 1;
+  color: #ffffff;
+  user-select: none;
 }
