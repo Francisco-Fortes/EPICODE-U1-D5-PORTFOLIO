@@ -12,38 +12,54 @@ body {
   position: relative;
   width: 50%;
   height: 50%;
-  background-color: aquamarine;
+  /* background: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.493),
+    rgba(255, 255, 255, 0.753),
+    #8f5800bb,
+    #8f5800bb) */
+
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  align-content: flex-end;
+  align-content: center;
 }
 
 #child1 {
-  /* max-width: 100%;
-  max-height: 100%; */
-  background-color: rgb(185, 9, 9);
-  color: yellow;
-  /* z-index: 2; */
-}
-
-#child2 h3 {
-  text-align: right;
+  /* align-self: center; */
+  /* background-color: #f16704; */
+  color: #8e6147;
+  width: fit-content;
+  padding-left: 30px;
   padding-right: 30px;
 }
 
-#child3 {
-  align-self: flex-end;
-  width: 200px;
-  height: 200px;
-  z-index: 4;
+#child2 h3 {
+  padding-right: 30px;
 }
+
+#child2 span {
+  padding-left: 8px;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+#child3 {
+  align-self: end;
+  padding-right: 5%;
+  width: 225px;
+  height: 300px;
+}
+
+/* #child3 span {
+  font-weight: bold;
+  font-size: 2rem;
+} */
 
 img {
   max-width: 100%;
   max-height: 100%;
-  object-fit: contain;
-  object-fit: fill;
+  object-fit: cover;
   border-radius: 40%;
 }
 
@@ -53,21 +69,76 @@ img {
   bottom: 50%;
   width: 50%;
   height: 50%;
-  background-color: yellow;
+  background-color: #bfa58e;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
 #childtp1 {
+  /* background: linear-gradient(-45deg #8f5800bb, rgba(255, 255, 255, 0.753)); */
   display: flex;
   justify-content: right;
-  padding-top: 5%;
+  margin-top: 5%;
 }
 
 #childtp1 a {
-  padding-right: 5%;
+  color: #ffffff;
+  border-style: solid;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
+  padding-top: 1.5%;
+  border-width: 3px;
+  margin-right: 6%;
   text-decoration: none;
+}
+
+#folder {
+  margin-bottom: 10%;
+  width: 200px;
+  height: 200px;
+  transition: 1s;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./folder-open.svg);
+  /* background-size: cover; */
+}
+
+/* Can we set up an ion-icon as background image?  */
+
+ion-icon {
+  margin-left: 200px;
+  margin-top: 200px;
+  width: 200px;
+  height: 200px;
+  color: #ffffff;
+}
+/* #folder:hover {
+  box-shadow: 0 0 0 200px rgba(0, 0, 0, 0);
+} */
+
+#folder p {
+  color: red;
+  opacity: 0;
+  transition: 2s;
+}
+
+#folder a {
+  color: red;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+#folder:hover {
+  background-image: none;
+  opacity: 1;
+}
+
+#folder:hover p {
+  opacity: 1;
 }
 
 #bottom-left {
@@ -75,7 +146,7 @@ img {
   bottom: 50%;
   width: 50%;
   height: 50%;
-  background-color: green;
+  background-color: #ffffff;
 }
 
 #bottom-right {
@@ -84,14 +155,5 @@ img {
   bottom: 100%;
   width: 50%;
   height: 50%;
-  background-color: orange;
-}
-
-#container-pic {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  z-index: 2;
-  width: 500px;
-  height: 100px;
+  background-color: #bfa58e;
 }
